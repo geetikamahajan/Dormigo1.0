@@ -1,0 +1,244 @@
+<html>
+	<head>
+<meta charset="utf-8">
+
+  <title>Dormigo</title>
+  <meta name="description" content="My Parse App">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+		<title>Dormigo</title>
+		<script type = "text/javascript">
+		var username = "";
+		var password = "";		
+		
+			function submit()
+			{
+				
+			}
+		</script>
+		<style type="text/css">
+		
+		body
+		{
+			background-image: url("https://scontent-iad.xx.fbcdn.net/hphotos-xpt1/v/t35.0-12/11294290_10205511342975873_2020135805_o.jpg?oh=2ecbf344383a72f7e269ed5dc38da18e&oe=555A8E20");
+			background-size: 100%;
+		}
+		
+		div.p2
+		{
+		background-color: white;	
+		border: 1px solid white;
+		 font-family: "Verdana", Times, sans-serif;
+		  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  max-width: 620px;
+  height: 465px;
+
+  	border: 1px solid #B8CCB8;
+  }
+  
+div.b1{
+text-align: left;
+}
+
+div.b2{
+	text-align: center;
+}
+div.b3{
+	text-align: right;
+}
+
+		
+		div.p3
+		{
+			text-align: center;
+		}
+		
+			p 
+			{
+				text-align: center;
+			}
+			a
+			{
+				text-align: center;
+			}
+			img {
+    			display: block;
+    			margin: 0 auto;
+}
+			input
+			{
+				 display: block;
+    			 margin: 0 auto;
+			}
+			
+		</style>
+	</head>
+<body>
+	
+
+<div class = "p2" >
+	<div class ="b1">
+	<button  onclick ="location.href='matched.html'">X</button>
+	<table style="width:100%">
+  <tr>
+    <td><img src="https://scontent-iad.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10150609_381837381968981_5194116223952085776_n.jpg?oh=c0d421e1c489a212471e87c95bd88018&oe=56008EA5" style="width:300px;height:400px"></td>
+    <td><p> <div id="interests">test</div></p></td>		
+     </tr>
+     <tr>
+     	<td><center><div id = "ints">Stella Sotos | Compatibility:  </div></center></td>
+     	<td><div class ="b2">
+<button  style="width:80px; height:30px" onclick ="location.href='MatchSTAR.html'"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Check_mark_23x20_02.svg/1081px-Check_mark_23x20_02.svg.png" style="width:16px;height:20px"></button>
+<button  style="width:80px; height:30px" onclick ="location.href='matchedDelete.html'"><img src="http://www.clker.com/cliparts/H/K/1/U/s/U/black-x-hi.png" style="width:16px;height:20px"></button>
+<button style="width:80px; height:30px" onclick ="location.href='https://tjhsst.edu/~2016ssotos/messages1.html'"><img src="http://www.bloedelphotography.com.au/wp-content/uploads/2013/04/iconmonstr-speech-bubble-14-icon.png" style="width:16px;height:20px"></button></div></td>
+     </tr>
+ 
+  
+</table>
+
+
+</div>
+
+<br>
+
+
+<script type = "text/javascript">
+Parse.initialize("U3mx61ep1YUuaFOVuBxssihWfMoYWBaHD7CaGSDM", "NCh8IfIbyHnLT6iQ4Mt77E0Mi3PDJBdDhaa7JVgR");
+var username = localStorage.getItem("username");
+var index;
+  	var school;
+  	var gender;
+  	var shower;
+  	var priorities;
+  	var politics;
+    var bio;
+    var fbl;
+  	var neatness;
+  	var sleeping;
+  	var religion;
+  	var res = [];
+  	var TestObject = Parse.Object.extend("TestObject");
+    var testObject = new TestObject();
+      var query = new Parse.Query("TestObject");
+     var x = false;
+query.find({
+  success: function(results) {
+
+    // results is an array of Parse.Object.
+    $(".success").show();
+    for(i = 0; i < results.length; i++){
+    	res.push(results[i]);
+    	if(results[i].attributes.Username === "stellaBRaps"){
+        bio = (results[i].attributes.Bio);
+  	shower = (results[i].attributes.Showering);
+  	religion = results[i].attributes.Religion;
+  	neatness = results[i].attributes.Neatness;
+  	sleeping = results[i].attributes.Sleeping;
+  	politics = results[i].attributes.Politics;
+  	priorities = results[i].attributes.Priorities;
+    fbl = results[i].attributes.FBlink;
+    	}
+    	if(results[i].attributes.Username === username){
+    		indx = i;
+    	}
+
+    }
+    var total = 0;
+  if(shower === res[indx].attributes.Showering)
+    total +=1;
+    if(religion === res[indx].attributes.Religion)
+      total+=1;
+    if(neatness === res[indx].attributes.Neatness)
+      total +=1;
+    if(sleeping === res[indx].attributes.Sleeping)
+      total+=1;
+    if(politics === res[indx].attributes.Politics)
+      total +=1;
+    if(priorities === res[indx].attributes.Priorities)
+      total+=1;
+    var percent = (total/6)*100;
+    document.getElementById("ints").innerHTML = document.getElementById("ints").innerHTML +Math.round(percent) + "%";
+    document.getElementById("interests").innerHTML = "Bio: <i><br>" + bio + "</i><br><br> How important is a clean room? <i><br>" + neatness + "</i><br> <br>How often do you shower? <i><br>" + shower + "</i><br><br> What's your sleep schedule? <i><br>" + sleeping + "</i> <br><br>What are your political beliefs? <i><br>" + politics + "</i><br><br> How religious are you? <i><br>" + religion + "</i> <br> <br> Facebook: <br>" + "<a href=http://www.facebook.com/"+fbl+">" + "View Profile";
+    
+  	//alert(priorities);
+    //alert(results[0].attributes.School);
+  },
+
+  error: function(error) {
+    // error is an instance of Parse.Error.
+    $(".error").show();
+  }
+});
+
+
+
+//alert((allAccts.(res[0]))[2]);
+
+
+</script>
+    
+</div>
+<div id = "result">
+</div>
+<script type="text/javascript">
+Parse.initialize("U3mx61ep1YUuaFOVuBxssihWfMoYWBaHD7CaGSDM", "NCh8IfIbyHnLT6iQ4Mt77E0Mi3PDJBdDhaa7JVgR");
+function newUs(){
+
+}
+function Submit(){
+	var username = document.getElementById("UserName").value;
+	var password = document.getElementById("PassWord").value;
+	// Check browser support
+if (typeof(Storage) != "undefined") {
+    // Store
+    
+    
+    var usernames = [];
+    var passwords = [];
+    var index;
+    var TestObject = Parse.Object.extend("TestObject");
+    var testObject = new TestObject();
+      var query = new Parse.Query("TestObject");
+query.find({
+  success: function(results) {
+    // results is an array of Parse.Object.
+    $(".success").show();
+    for(i = 0; i < results.length; i++){
+    	//usernames.push(results[i]attributes.Username);
+    	//passwords.push(results[i]attributes.Password1);
+    	if((results[i].attributes.Username)==(username)){
+    		if((results[i].attributes.Password1)==(password)){
+    			index = i;
+    			localStorage.setItem("username", username);
+    			console.log(results[i]);
+    			//alert("U A USER!!!");
+    			break;
+    		}
+    	}
+    }
+    //alert(results[0].attributes.School);
+  },
+
+  error: function(error) {
+    // error is an instance of Parse.Error.
+    $(".error").show();
+  }
+});
+
+
+
+    // Retrieve
+    //document.getElementById("result").innerHTML = localStorage.getItem("username");
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+//put in "scroll down"
+}
+
+</script>
+</body>
+</html>
