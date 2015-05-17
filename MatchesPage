@@ -1,0 +1,190 @@
+<!DOCTYPE HTML> 
+<html lang="en-US"> 
+<head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <title>Matches</title>
+  
+  <style type="text/css">
+    body {
+       margin: 0;
+       padding: 0;
+       background: #EEE;
+       font: 10px/13px 'Lucida Sans',sans-serif;
+    }
+    .wrap {
+       overflow: hidden;
+       margin: 10px;
+    }
+    .box {
+       float: left;
+       position: relative;
+       width: 20%;
+       padding-bottom: 20%;
+    }
+    .boxInner {
+       position: absolute;
+       left: 10px;
+       right: 10px;
+       top: 10px;
+       bottom: 10px;
+       overflow: hidden;
+    }
+    .boxInner img {
+       width: 100%;
+    }
+    .boxInner .titleBox {
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       right: 0;
+       margin-bottom: -50px;
+       background: #000;
+       background: rgba(0, 0, 0, 0.5);
+       color: #FFF;
+       padding: 10px;
+       text-align: center;
+       -webkit-transition: all 0.3s ease-out;
+       -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+       transition: all 0.3s ease-out;
+    }
+    body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleBox {
+       margin-bottom: 0;
+    }
+    @media only screen and (max-width : 480px) {
+       /* Smartphone view: 1 tile */
+       .box {
+          width: 100%;
+          padding-bottom: 100%;
+       }
+    }
+    @media only screen and (max-width : 650px) and (min-width : 481px) {
+       /* Tablet view: 2 tiles */
+       .box {
+          width: 50%;
+          padding-bottom: 50%;
+       }
+    }
+    @media only screen and (max-width : 1050px) and (min-width : 651px) {
+       /* Small desktop / ipad view: 3 tiles */
+       .box {
+          width: 33.3%;
+          padding-bottom: 33.3%;
+       }
+    }
+    @media only screen and (max-width : 1290px) and (min-width : 1051px) {
+       /* Medium desktop: 4 tiles */
+       .box {
+          width: 25%;
+          padding-bottom: 25%;
+       }
+    }
+    div.p1
+    {
+
+background-color: #006666;  
+    border: 10px solid #006666;
+     font-family: "Verdana", Times, sans-serif;
+     text-align: center;
+max-width: 10200px;
+    }
+    div.p1.p2
+    {
+      padding-left: 20%;
+    }
+
+    p.hd{
+      text-align: left;
+      font-size: 25px;
+      color: #006666;
+      font-family: "Verdana", Times, sans-serif;
+      padding-left: 20px;
+    }
+  </style> 
+  
+  <!-- Enable media queries for old IE -->
+  <!--[if lt IE 9]>
+     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <![endif]-->
+  
+</head> 
+
+
+<body class="no-touch"> 
+ <div class = "p1">
+  <button type ="button" onclick ="logOut();" style="float: right;">Log Out</button>
+  <br>
+  <p><font size = "25" color="#EAE9ED">Dormigo</font></p> 
+</div>
+
+  <!-- <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+        <span class="sr-only">70% Complete</span>
+      </div>
+      </div>-->
+
+      <br>
+      <br>
+      <p class ="hd"><b>Your Matches</b></p>
+    </div>
+
+  
+  <div class="wrap">
+    
+    <!-- Define all of the tiles: -->
+    <div class="box">
+      <div class="boxInner" onclick = "pop1();">
+        <img src="https://scontent-iad.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10150609_381837381968981_5194116223952085776_n.jpg?oh=c0d421e1c489a212471e87c95bd88018&oe=56008EA5" />
+        <div id = "Name1" class="titleBox">Stella Sotos</div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxInner">
+        <img src="https://scontent-iad.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11150450_1418373255149966_1005755691870130901_n.jpg?oh=d240a33067e318c1c9267f1bf6267e1b&oe=5607BFF9" />
+        <div id = "Name2" class="titleBox">Taylor Quinn</div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxInner">
+        <img src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xfp1/t31.0-8/906017_998107540208561_8955891065630643660_o.jpg" />
+        <div id = "Name3" class="titleBox">Julia Dunbar</div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxInner">
+        <img src="https://scontent-iad.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11077925_10205152301600063_1734415382048099223_n.jpg?oh=4395886b940649451c54a9e300e63882&oe=5608ACAA" />
+        <div id = "Name4" class="titleBox">Geetika Mahajan</div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxInner">
+        <img src="https://scontent-iad.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/10409054_1049203128426381_8329657845338347472_n.jpg?oh=edc690ca29d5a8780785b80b69aa81f1&oe=55D254A5" />
+        <div id = "Name5" class="titleBox">Anna Weidman</div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxInner">
+        <img src="https://scontent-iad.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10460949_484838705000186_987743092233330795_n.jpg?oh=1eba427fe18390dde0d4d2869e3f88e3&oe=560AD466" />
+        <div id = "Name6" class="titleBox">Anna Venetianer</div>
+      </div>
+    </div>
+  </div>
+  <!-- /#wrap -->
+
+  <script type="text/javascript">
+  function pop1(){
+    window.location.href = 'matchedPOPUP.html';
+  }
+  function logOut(){
+    window.location.href = 'login.html';
+   }
+  </script>
+  
+</body> 
+</html>
