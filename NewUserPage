@@ -1,0 +1,349 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Dormigo</title>
+  <meta name="description" content="My Parse App">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+  <style type = "text/css">
+  body{
+    background-color: #EAE9ED;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  div.p1
+    {
+    background-color: #006666;  
+     font-family: "Verdana", Times, sans-serif;
+     text-align: center;
+max-width: 10200px;
+
+    }
+    div.p2
+    {
+      background-color: white;  
+      border: 1px solid white;
+      font-family: "Verdana", Times, sans-serif;
+      margin: auto;
+      padding-left: 20px;
+      max-width: 900px;
+      height: 840px;
+
+    border: 1px solid #B8CCB8;
+    
+    }
+    div.pt3
+    {
+      text-align: center;
+    }
+    div.gt
+    {
+      text-align: left;
+    }
+    p
+    {
+      font-family: "Verdana", Times, sans-serif;
+      color: #006666;
+      font-size: 25px;
+    }
+
+
+    </style>
+
+</head>
+
+<body>
+
+  <div class = "p1"> <center><p><font size = "25" color="#EAE9ED">Dormigo</font></p></center></div>
+   <!--div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="66.6" aria-valuemin="0" aria-valuemax="100" style="width:66.6%">
+        <span class="sr-only">70% Complete</span>
+      </div>
+      </div>-->
+      <br>
+<div class = "p2"> <br> 
+  <div class="gt">
+  <p><b>Create Profile</b></p> <br></div>
+  <div class="gt">
+                <tab><img id = "hi" src="" height="100" width = "100" alt="Image Preview"><br><br> 
+                 <input id = "uploadImage" type="file" onchange="previewFile();"><br></div>
+      
+        Username: <input type="text" id="Uname" style="width:89.7%"></input> <br> <br>
+        Password: <input type="password" id="PW"style="width:90.54%"></input> <br> <br>
+         Name: <input type="text" id="name"style="width:93.2%"></input> <br> <br>
+         Bio: <input type="text" id="bio"style="width:95.25%"></input> <br> <br>
+         Facebook Link: http://wwww.facebook.com/ <input type="text" id="fb"style="width:63.5%"></input> <br> <br>
+        <div class="gt">
+        School: <div id = "menu">
+        <select id = "schoolOptions" > <!-- onChanfge -->
+              <option> VCU </option>
+              <option> Virginia Tech </option>
+              <option> University of Michigan </option>
+               <option> UPenn </option>
+        </select>
+        <br>
+        <br>
+         Gender: 
+      <div id = "gend">
+            <select id = "gender" style="width:20.78%" > <!-- onChanfge -->
+                 <option> Male </option>
+                  <option> Female </option>
+                  <option> Other </option>
+
+              </select>
+
+      </div>
+    </div>
+      <br> 
+                 
+              
+      <br>
+     
+      
+      
+      
+            <div class = "pt3">
+                <table style="width:100%">
+                      <tr>
+                          <td><b>HYGIENE<b></td>
+                           <td><b>HABITS<b></td>    
+                            <td><b>BELIEFS<b></td>
+                      </tr>
+
+                      <tr>
+                           <td> <br>Showering Preferences: <br>
+      
+                                <select id = "shower" > <!-- onChanfge -->
+                                 <option> <i>Once a day<i> </option>
+                                     <option> <i>At least every other day<i> </option>
+                                    <option> <i>Once a week
+                                            <i> </option>
+
+                                    </select> </td>
+
+                            <td><br>Priorities: <br>
+
+                                <select id = "priorities" > <!-- onChanfge -->
+                                    <option> <i>Studies are the most important<i> </option>
+                                       <option> <i>I want to study and party<i> </option>
+                                     <option> <i>I'm in it for the parties!
+                                    <i> </option>
+
+                                </select>
+</td>    
+    <td><br>Politics: <br>
+
+<select id = "politics" > <!-- onChanfge -->
+  <option> <i>Democratic<i> </option>
+  <option> <i>Republican<i> </option>
+  <option> <i>Not important
+<i> </option>
+  <option> Other </option>
+
+</select>
+  </tr>
+
+  <tr>
+    <td><br>Room Neatness: <br>
+<select id = "roomneatness" > <!-- onChanfge -->
+  <option> <i>Extremely Important<i> </option>
+  <option> <i>Decently Important<i> </option>
+  <option> <i>Not Important
+<i> </option>
+
+</select>
+</td>
+    <td><br>Sleeping Habits: <br>
+
+<select id = "sleepinghabits" > <!-- onChanfge -->
+  <option> <i>Night Owl<i> </option>
+  <option> <i>Early Bird<i> </option>
+  <option> <i>No preference
+<i> </option>
+
+</select>
+  </td> 
+
+    <td><br>Religiosity: <br>
+<select id = "religiosity" > <!-- onChanfge -->
+  <option> <i>Very Religious<i> </option>
+  <option> <i>Slightly Religious<i> </option>
+  <option> <i>Not Religious
+<i> </option>
+
+</select>
+  </td>
+<tr><td></td><td>
+<br>
+<br>
+  <div class = "pt3">
+<button onClick = "getPrefsText();"><b>Submit</b></button>
+</div></td><td></td>
+</table>
+
+<br>
+
+
+
+
+  <script type="text/javascript">
+  var name;
+    Parse.initialize("U3mx61ep1YUuaFOVuBxssihWfMoYWBaHD7CaGSDM", "NCh8IfIbyHnLT6iQ4Mt77E0Mi3PDJBdDhaa7JVgR");
+    function getPrefsText(){     
+      var religion = document.getElementById('religiosity');
+    var rel = religion.options[religion.selectedIndex].text;
+    var neatne = document.getElementById('roomneatness');
+    var neat = neatne.options[neatne.selectedIndex].text;
+    var showe = document.getElementById('shower');
+    var sho = showe.options[showe.selectedIndex].text;
+    var sleepin = document.getElementById('sleepinghabits');
+    var sleep = sleepin.options[sleepin.selectedIndex].text;
+    var politi = document.getElementById('politics');
+    var pol = politi.options[politi.selectedIndex].text;
+    var priori = document.getElementById('priorities');
+    var pri = priori.options[priori.selectedIndex].text;
+    name = document.getElementById("name").value;
+    var fbLink = document.getElementById("fb").value;
+    var bio = document.getElementById("bio").value;
+      var uname = document.getElementById("Uname").value;
+      localStorage.setItem("username", uname);
+      var pw = document.getElementById("PW").value;
+      var schools = document.getElementById('schoolOptions');
+    var school = schools.options[schools.selectedIndex].text;
+    var gender = document.getElementById('gender');
+    var gend = gender.options[gender.selectedIndex].text;
+      var TestObject = Parse.Object.extend("TestObject");
+    var testObject = new TestObject();
+      testObject.save({Religion: rel}, {
+      success: function(object) {
+        $(".success").show();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    });
+      testObject.save({Neatness: neat}, {
+      success: function(object) {
+        $(".success").show();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    });
+      testObject.save({Bio: bio}, {
+      success: function(object) {
+        $(".success").show();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    });
+      testObject.save({FBlink: fbLink}, {
+      success: function(object) {
+        $(".success").show();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    });
+      testObject.save({Showering: sho}, {
+      success: function(object) {
+        $(".success").show();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    });
+      testObject.save({Sleeping: sleep}, {
+      success: function(object) {
+        $(".success").show();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    });
+      testObject.save({Politics: pol}, {
+      success: function(object) {
+        $(".success").show();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    });
+      testObject.save({Priority: pri}, {
+      success: function(object) {
+        $(".success").show();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    });
+      testObject.save({TheName: name}, {
+      success: function(object) {
+        $(".success").show();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    });
+      testObject.save({School: school}, {
+      success: function(object) {
+        $(".success").show();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    });
+      testObject.save({Gender: gend}, {
+      success: function(object) {
+        $(".success").show();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    });
+      testObject.save({Username: uname}, {
+      success: function(object) {
+        $(".success").show();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    });
+      testObject.save({Password1: pw}, {
+      success: function(object) {
+        $(".success").show();
+        goToNext();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    });
+      //fwindow.location.href = 'matched.html';
+    }
+
+    function previewFile(){
+        var reader  = new FileReader();
+
+       reader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+       reader.onload = function (oFREvent) {
+           document.getElementById("hi").src = oFREvent.target.result;
+       };
+   }
+   function goToNext(){
+    window.location.href = 'matched.html';
+   }
+    </script>
+</body>
+
+</html>
